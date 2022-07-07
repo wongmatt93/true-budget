@@ -1,0 +1,90 @@
+body,
+ul,
+h1,
+h2,
+h3,
+h4,
+p,
+footer {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  background-color: rgb(38, 90, 10);
+  color: white;
+  padding: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.overview {
+  border: 2px solid black;
+  margin: 10px;
+  background-color: aqua;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.remaining-budget {
+  border: 2px solid black;
+  margin: 10px;
+}
+.total-container {
+  display: flex;
+  margin: 10px;
+}
+.total-spent {
+  flex: 1;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+.total-budget {
+  flex: 1;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+.middle {
+  display: flex;
+  margin: 10px;
+
+  text-align: center;
+  justify-content: space-between;
+}
+
+.categories {
+  width: 40%;
+  background-color: cornflowerblue;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.update-budget {
+  width: 40%;
+  background-color: hotpink;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.transaction-dash {
+  border: 1px solid black;
+  margin: 10px;
+  background-color: olivedrab;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+button {
+  width: 100%;
+  background-color: forestgreen;
+  padding: 20px;
+}
