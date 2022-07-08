@@ -36,8 +36,30 @@
       <section class="middle">
         <div class="categories">
           <h4>Categories</h4>
+
         </div>
-        <div class="update-budget"><h4>Update Budget</h4></div>
+        <div class="update-budget"><h4>Update Budget</h4>
+          <div>
+            <section class="form-modal toggle-modal">
+              <div class="budget-form">
+                <form>
+                  <h4>Update Budget</h4>
+                  <label for="budget">Enter New Budget:</label>
+                  <input
+                    type="number"
+                    name="budget"
+                    id="budget"
+                    min="0"
+                    placeholder="$1,000"
+                    min="0"
+                    required
+                  />
+                  <button>Update</button>
+                </form>
+              </div>
+            </section>
+          </div>
+        </div>
       </section>
       <section class="transaction-section">
         <h4>List of Transactions</h4>
@@ -56,26 +78,11 @@
           <i class="fa-solid fa-angles-left close-categories"></i>
         </div>
       </section>
-      <section class="form-modal toggle-modal">
-        <div class="budget-form">
-          <form>
-            <h4>Update Budget</h4>
-            <label for="budget">Enter New Budget:</label>
-            <input
-              type="number"
-              name="budget"
-              id="budget"
-              min="0"
-              placeholder="$1,000"
-              min="0"
-              required
-            />
-            <button>Update</button>
-          </form>
-        </div>
-      </section>
+      
+        </section>
+      </div>
       <section>
-        <div class="expense-modal toggle-modal">
+        <div class="expense-modal toggle-expense">
           <form class="expense-form">
             <h4>Add Expense</h4>
             <label for="categories">Categories</label>
@@ -101,7 +108,7 @@
           </form>
         </div>
       </section>
-      <div class="broken-piggy toggle-modal">
+      <div class="broken-piggy toggle-piggy">
         <div class="piggy-box">
           <p>You broke your piggybank</p>
           <img src="assets/pexels-imustbedead-10835793.jpg" alt="" />
