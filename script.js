@@ -47,7 +47,7 @@ closeCategories.addEventListener("click", () => {
 });
 
 const footerButton = () => {
-  expenseModal.classList.remove("toggle-modal");
+  expenseModal.classList.remove("toggle-expense");
 };
 expenseButton.addEventListener("click", footerButton);
 
@@ -107,11 +107,11 @@ const addExpense = (event) => {
   balance = parseInt(budget) - parseInt(spent);
   if (balance < 0) {
     expenseButton.removeEventListener("click", footerButton);
-    brokenPiggy.classList.remove("toggle-modal");
+    brokenPiggy.classList.remove("toggle-piggy");
   }
   remainingBudget.textContent = `$${balance}`;
   totalSpent.textContent = `$${spent}`;
-  expenseModal.classList.add("toggle-modal");
+  expenseModal.classList.add("toggle-expense");
 
   subTotal(expenseArray);
 
