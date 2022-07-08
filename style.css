@@ -135,6 +135,40 @@ main {
   z-index: 1;
 }
 
+.expense-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.expense-form {
+  background-color: darkmagenta;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10%;
+  padding: 20px;
+  width: 40%;
+  height: 40%;
+}
+
+.expense-form label {
+  font-size: 25px;
+  margin-top: 15px;
+}
+.expense-form h4 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
 .budget-form {
   background-color: blueviolet;
   padding: 20px;
