@@ -44,6 +44,46 @@ expenseButton.addEventListener("click", () => {
   expenseModal.classList.remove("toggle-modal");
 });
 
+const updateExpenseList = () => {
+  transactionList.textContent = "";
+  expenseArray.forEach((expenses, index) => {
+    const newList = document.createElement("li");
+    const newAmount = document.createElement("p");
+    const newType = document.createElement("p");
+    const newName = document.createElement("p");
+    const trash = document.createElement("i");
+    trash.classList.add("fa-solid", "fa-trash");
+    trash.setAttribute("data-index", index);
+    newList.classList.add("expense-item");
+    newAmount.textContent = `$${expenses.expenseValues}`;
+    newType.textContent = expenses.expenseType;
+    newName.textContent = expenses.expenseName;
+    newList.append(newType, newName, newAmount, trash);
+    transactionList.append(newList);
+  });
+};
+
+const entertainmentList = (array) => {
+  let entertainmentBudget = 0;
+  let billsBudget = 0;
+  let clothingBudget = 0;
+  let foodBudget = 0;
+  let miscellaneousBudget = 0;
+  for (let item of array) {
+    if (item.expenseType === "Entertainment") {
+      entertainmentBudget += parseInt(item.expenseValues);
+    } else if (item.expenseType === "Bills") {
+      billsBudget += parseInt(item.expenseValues);
+    } else if (item.expenseType === "Clothing") {
+      clothingBudget += parseInt(item.expenseValues);
+    } else if (item.expenseType === "Food") {
+      foodBudget += parseInt(item.expenseValues);
+    } else {
+      miscellaneousBudget += parseInt(item.expenseValues);
+    }
+  }
+};
+
 expenseForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const expenseType = document.querySelector("#categories").value;
@@ -58,22 +98,18 @@ expenseForm.addEventListener("submit", (event) => {
   // }
   remainingBudget.textContent = `$${balance}`;
   totalSpent.textContent = `$${spent}`;
-  const newList = document.createElement("li");
-  const newAmount = document.createElement("p");
-  const newType = document.createElement("p");
-  const newName = document.createElement("p");
-  const trash = document.createElement("i");
-  trash.classList.add("fa-solid", "fa-trash");
-  newList.classList.add("expense-item");
-  newAmount.textContent = `$${newExpense.expenseValues}`;
-  newType.textContent = newExpense.expenseType;
-  newName.textContent = newExpense.expenseName;
-  newList.append(newType, newName, newAmount, trash);
-  transactionList.append(newList);
   expenseModal.classList.add("toggle-modal");
+  entertainmentList(expenseArray);
+
+  updateExpenseList();
 });
 
 transactionList.addEventListener("click", (event) => {
   if (event.target.classList.contains("fa-trash")) {
+    const index = event.target.getAttribute("data-index");
+    expenseArray.splice(index, 1);
+    updateExpenseList();
   }
 });
+
+updateExpenseList();
