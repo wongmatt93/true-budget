@@ -5,6 +5,7 @@ const currentBudget = document.querySelector(".current-budget");
 const categories = document.querySelector(".categories");
 const updateBudget = document.querySelector(".update-budget");
 const categoriesModal = document.querySelector(".categories-modal");
+const transactionList = document.querySelector(".transaction-list");
 const formModal = document.querySelector(".form-modal");
 const form = document.querySelector(".budget-form form");
 const closeCategories = document.querySelector(".close-categories");
@@ -47,12 +48,32 @@ expenseForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const expenseType = document.querySelector("#categories").value;
   const expenseValues = document.querySelector("#amount").value;
-  const newExpense = { expenseType, expenseValues };
+  const expenseName = document.querySelector("#name").value;
+  const newExpense = { expenseType, expenseValues, expenseName };
   expenseArray.push(newExpense);
   spent += parseInt(newExpense.expenseValues);
   balance = parseInt(budget) - parseInt(spent);
+  // if (balance < 0) {
+  //   alert("You suck with money");
+  // }
   remainingBudget.textContent = `$${balance}`;
   totalSpent.textContent = `$${spent}`;
-  console.log(balance, budget);
+  const newList = document.createElement("li");
+  const newAmount = document.createElement("p");
+  const newType = document.createElement("p");
+  const newName = document.createElement("p");
+  const trash = document.createElement("i");
+  trash.classList.add("fa-solid", "fa-trash");
+  newList.classList.add("expense-item");
+  newAmount.textContent = `$${newExpense.expenseValues}`;
+  newType.textContent = newExpense.expenseType;
+  newName.textContent = newExpense.expenseName;
+  newList.append(newType, newName, newAmount, trash);
+  transactionList.append(newList);
   expenseModal.classList.add("toggle-modal");
+});
+
+transactionList.addEventListener("click", (event) => {
+  if (event.target.classList.contains("fa-trash")) {
+  }
 });

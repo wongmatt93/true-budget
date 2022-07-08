@@ -39,9 +39,16 @@
         </div>
         <div class="update-budget"><h4>Update Budget</h4></div>
       </section>
-      <section class="transaction-dash">
+      <section class="transaction-section">
         <h4>List of Transactions</h4>
-        <ul></ul>
+        <ul class="transaction-list">
+          <li class="expense-item">
+            <p>asdf</p>
+            <p>asdf</p>
+            <p>1234</p>
+            <p>trash</p>
+          </li>
+        </ul>
       </section>
       <section class="categories-modal toggle-modal">
         <div class="categories-list">
@@ -78,12 +85,14 @@
             <h4>Add Expense</h4>
             <label for="categories">Categories</label>
             <select name="categories" id="categories">
-              <option value="entertainment">Entertainment</option>
-              <option value="bills">Bills</option>
-              <option value="clothing">Clothing</option>
-              <option value="food">Food</option>
-              <option value="miscellaneous">Miscellaneous</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Bills">Bills</option>
+              <option value="Clothing">Clothing</option>
+              <option value="Food">Food</option>
+              <option value="Miscellaneous">Miscellaneous</option>
             </select>
+            <label for="name">Name for Transaction</label>
+            <input type="text" name="name" id="name" />
             <label for="amount">Amount</label>
             <input type="number" name="amount" id="amount" placeholder="50" />
             <button>Submit</button>

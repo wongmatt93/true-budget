@@ -80,7 +80,7 @@ main {
   background-color: dodgerblue;
 }
 
-.transaction-dash {
+.transaction-section {
   border: 1px solid black;
   margin: 10px;
   background-color: olivedrab;
@@ -119,6 +119,16 @@ main {
   background-color: lightgreen;
   padding: 15%;
   border-radius: 20%;
+}
+
+.transaction-list {
+  list-style: none;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
 }
 
 .form-modal {
