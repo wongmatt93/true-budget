@@ -47,11 +47,11 @@
         <div class="categories-list">
           <h4>Categories</h4>
           <ul>
-            <li>Entertainment</li>
-            <li>Bills</li>
-            <li>Clothing</li>
-            <li>Food</li>
-            <li>Miscellaneous</li>
+            <li class="entertainment-total">Entertainment = $0</li>
+            <li class="bils-total">Bills = $0</li>
+            <li class="clothing-total">Clothing = $0</li>
+            <li class="food-total">Food = $0</li>
+            <li class="miscellaneous-total">Miscellaneous = $0</li>
           </ul>
           <i class="fa-solid fa-angles-left close-categories"></i>
         </div>
@@ -67,6 +67,8 @@
               id="budget"
               min="0"
               placeholder="$1,000"
+              min="0"
+              required
             />
             <button>Update</button>
           </form>
@@ -85,13 +87,26 @@
               <option value="Miscellaneous">Miscellaneous</option>
             </select>
             <label for="name">Name for Transaction</label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" required />
             <label for="amount">Amount</label>
-            <input type="number" name="amount" id="amount" placeholder="50" />
+            <input
+              type="number"
+              name="amount"
+              id="amount"
+              placeholder="50"
+              required
+              min="0"
+            />
             <button>Submit</button>
           </form>
         </div>
       </section>
+      <div class="broken-piggy toggle-modal">
+        <div class="piggy-box">
+          <p>You broke your piggybank</p>
+          <img src="assets/pexels-imustbedead-10835793.jpg" alt="" />
+        </div>
+      </div>
     </main>
     <footer>
       <button class="expense-button">Add Expense</button>

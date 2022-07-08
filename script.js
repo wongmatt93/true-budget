@@ -12,6 +12,12 @@ const closeCategories = document.querySelector(".close-categories");
 const expenseButton = document.querySelector(".expense-button");
 const expenseForm = document.querySelector(".expense-form");
 const expenseModal = document.querySelector(".expense-modal");
+const entertainmentTotal = document.querySelector(".entertainment-total");
+const bilsTotal = document.querySelector(".bils-total");
+const clothingTotal = document.querySelector(".clothing-total");
+const foodTotal = document.querySelector(".food-total");
+const miscellaneousTotal = document.querySelector(".miscellaneous-total");
+const brokenPiggy = document.querySelector(".broken-piggy");
 
 const expenseArray = [];
 
@@ -40,9 +46,10 @@ closeCategories.addEventListener("click", () => {
   categoriesModal.classList.add("toggle-modal");
 });
 
-expenseButton.addEventListener("click", () => {
+const footerButton = () => {
   expenseModal.classList.remove("toggle-modal");
-});
+};
+expenseButton.addEventListener("click", footerButton);
 
 const updateExpenseList = () => {
   transactionList.textContent = "";
@@ -63,7 +70,7 @@ const updateExpenseList = () => {
   });
 };
 
-const entertainmentList = (array) => {
+const subTotal = (array) => {
   let entertainmentBudget = 0;
   let billsBudget = 0;
   let clothingBudget = 0;
@@ -82,9 +89,14 @@ const entertainmentList = (array) => {
       miscellaneousBudget += parseInt(item.expenseValues);
     }
   }
+  entertainmentTotal.textContent = `Entertainment Total = $${entertainmentBudget}`;
+  bilsTotal.textContent = `Bills Total = $${billsBudget}`;
+  clothingTotal.textContent = `Clothing Total = $${clothingBudget}`;
+  foodTotal.textContent = `Food Total = $${foodBudget}`;
+  miscellaneousTotal.textContent = `Miscellaneous Total = $${miscellaneousBudget}`;
 };
 
-expenseForm.addEventListener("submit", (event) => {
+const addExpense = (event) => {
   event.preventDefault();
   const expenseType = document.querySelector("#categories").value;
   const expenseValues = document.querySelector("#amount").value;
@@ -93,22 +105,33 @@ expenseForm.addEventListener("submit", (event) => {
   expenseArray.push(newExpense);
   spent += parseInt(newExpense.expenseValues);
   balance = parseInt(budget) - parseInt(spent);
-  // if (balance < 0) {
-  //   alert("You suck with money");
-  // }
+  if (balance < 0) {
+    expenseButton.removeEventListener("click", footerButton);
+    brokenPiggy.classList.remove("toggle-modal");
+  }
   remainingBudget.textContent = `$${balance}`;
   totalSpent.textContent = `$${spent}`;
   expenseModal.classList.add("toggle-modal");
-  entertainmentList(expenseArray);
+
+  subTotal(expenseArray);
 
   updateExpenseList();
-});
+};
+
+expenseForm.addEventListener("submit", addExpense);
 
 transactionList.addEventListener("click", (event) => {
   if (event.target.classList.contains("fa-trash")) {
     const index = event.target.getAttribute("data-index");
+    spent -= expenseArray[index].expenseValues;
+    balance = parseInt(budget) - parseInt(spent);
+
     expenseArray.splice(index, 1);
     updateExpenseList();
+    subTotal(expenseArray);
+
+    remainingBudget.textContent = `$${balance}`;
+    totalSpent.textContent = `$${spent}`;
   }
 });
 
