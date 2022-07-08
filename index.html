@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/77051d86b4.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
     <header>
       <h1>TrueBudget</h1>
+      <i class="fa-solid fa-piggy-bank"></i>
     </header>
     <main>
       <section class="overview">
@@ -48,6 +53,7 @@
             <li>Food</li>
             <li>Miscellaneous</li>
           </ul>
+          <i class="fa-solid fa-angles-left"></i>
         </div>
       </section>
       <section class="form-modal toggle-modal">
@@ -66,9 +72,27 @@
           </form>
         </div>
       </section>
+      <section>
+        <div class="expense-modal">
+          <form class="expense-form">
+            <h4>Add Expense</h4>
+            <label for="categories">Categories</label>
+            <select name="categories" id="categories">
+              <option value="entertainment">Entertainment</option>
+              <option value="bills">Bills</option>
+              <option value="clothing">Clothing</option>
+              <option value="food">Food</option>
+              <option value="miscellaneous">Miscellaneous</option>
+            </select>
+            <label for="amount">Amount</label>
+            <input type="number" name="amount" id="amount" placeholder="50" />
+            <button>Submit</button>
+          </form>
+        </div>
+      </section>
     </main>
     <footer>
-      <button>Add expense</button>
+      <button class="expense-button">Add expense</button>
     </footer>
     <script src="script.js"></script>
   </body>

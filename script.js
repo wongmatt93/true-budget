@@ -8,6 +8,10 @@ const updateBudget = document.querySelector(".update-budget");
 const categoriesModal = document.querySelector(".categories-modal");
 const formModal = document.querySelector(".form-modal");
 const form = document.querySelector(".budget-form form");
+const closeCategories = document.querySelector(".close-categories");
+const expenseButton = document.querySelector("expense-button");
+
+const expenseArray = [];
 
 categories.addEventListener("click", () => {
   categoriesModal.classList.remove("toggle-modal");
@@ -25,3 +29,9 @@ form.addEventListener("submit", (event) => {
   remainingBudget.textContent = `$${balance}`;
   formModal.classList.add("toggle-modal");
 });
+
+closeCategories.addEventListener("click", () => {
+  categoriesModal.classList.add("toggle-modal");
+});
+
+expenseButton.addEventListener("click", () => {});
