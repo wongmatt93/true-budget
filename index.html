@@ -15,16 +15,16 @@
       <section class="overview">
         <div class="remaining-budget">
           <h2>Remaining Budget</h2>
-          <p>$$$$$</p>
+          <p class="remaining-budget-text">$0.00</p>
         </div>
         <div class="total-container">
           <div class="total-spent">
             <h3>Total Spent</h3>
-            <p>$$$$$</p>
+            <p class="total-spent-text">$0.00</p>
           </div>
           <div class="total-budget">
             <h3>Total budget</h3>
-            <p>$$$$$$</p>
+            <p class="current-budget">$0.00</p>
           </div>
         </div>
       </section>
@@ -36,10 +36,9 @@
       </section>
       <section class="transaction-dash">
         <h4>List of Traansactions</h4>
-
         <ul></ul>
       </section>
-      <section class="categories-modal">
+      <section class="categories-modal toggle-modal">
         <div class="categories-list">
           <h4>Categories</h4>
           <ul>
@@ -49,6 +48,22 @@
             <li>Food</li>
             <li>Miscellaneous</li>
           </ul>
+        </div>
+      </section>
+      <section class="form-modal toggle-modal">
+        <div class="budget-form">
+          <form>
+            <h4>Update Budget</h4>
+            <label for="budget">Enter New Budget:</label>
+            <input
+              type="number"
+              name="budget"
+              id="budget"
+              min="0"
+              placeholder="$1,000"
+            />
+            <button>Update</button>
+          </form>
         </div>
       </section>
     </main>
