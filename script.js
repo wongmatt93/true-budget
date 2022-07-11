@@ -23,7 +23,7 @@ const expenseArray = [];
 
 let balance = 0;
 let spent = 0;
-let budget = 0;
+let budget = 200;
 
 categories.addEventListener("click", () => {
   categoriesModal.classList.remove("toggle-modal");

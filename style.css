@@ -12,33 +12,38 @@ main {
 }
 
 body {
-  background: linear-gradient(to bottom, #12232e, forestgreen);
+  background-color: #214f57;
   height: 100vh;
   color: white;
 }
 header {
   width: 100%;
-  /* background-color: rgb(38, 90, 10); */
+  background-color: #18374b;
   color: white;
-  padding: 20px;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  margin: 10px;
+}
+
+header h1 {
+  padding: 20px;
 }
 
 .overview {
   margin: 10px;
-  background-color: #0d8141;
+  background-color: #208e8f;
   text-align: center;
   border-radius: 10px;
 }
 
 .remaining-budget {
-  border: 2px solid black;
   margin: 10px;
+}
+
+.remaining-budget-text {
+  font-size: 36px;
 }
 .total-container {
   display: flex;
@@ -46,8 +51,8 @@ main {
 }
 .total-spent {
   flex: 1;
-  border: 2px solid black;
   box-sizing: border-box;
+  border: 2px solid black;
 }
 
 .total-budget {
@@ -65,7 +70,7 @@ main {
 
 .categories {
   width: 40%;
-  background-color: cornflowerblue;
+  background-color: #18374b;
   padding: 20px;
   border-radius: 10px;
 }
@@ -76,7 +81,7 @@ main {
 
 .update-budget {
   width: 40%;
-  background-color: #203647;
+  background-color: #18374b;
   padding: 20px;
   border-radius: 10px;
 }
@@ -88,7 +93,31 @@ main {
 .transaction-section {
   border: 1px solid black;
   margin: 10px;
-  background-color: rgb(41, 31, 136);
+  background-color: #208e8f;
+  height: 250px;
+  overflow: auto;
+  position: relative;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  text-align: center;
+}
+
+.transaction-row {
+  position: sticky;
+  top: 0;
+  background-color: #18374b;
+}
+
+.remove-column {
+  width: 12%;
+}
+
+.amount-column {
+  width: 15%;
+}
+
+.categories-column {
+  width: 33%;
 }
 
 .categories-modal {
@@ -127,7 +156,7 @@ main {
 }
 
 .categories-list {
-  background-color: #18374b;
+  background-color: #208e8f;
   padding: 10% 10% 5% 10%;
   border-radius: 10px;
 }
@@ -205,13 +234,15 @@ footer {
 }
 
 footer button {
-  width: 100%;
-  background-color: forestgreen;
-  padding: 20px;
+  width: 99%;
+  background-color: #12232e;
+  padding: 20px 0;
+  color: white;
+  border-style: none;
 }
 
 footer button:hover {
-  background-color: rgb(238, 130, 130);
+  background-color: #d40028;
 }
 
 .broken-piggy {
@@ -264,7 +295,14 @@ footer button:hover {
 
 .table-caption {
   font-size: 25px;
+  background-color: #18374b;
+  padding: 10px 0;
 }
+
+.transaction-section table {
+  border: none;
+}
+
 @media only screen and (min-width: 768px) {
   main {
     display: flex;
@@ -313,9 +351,9 @@ footer button:hover {
   }
 
   .transaction-section {
-    position: absolute;
+    position: static;
     top: 42%;
-    width: 100%;
+    width: 98%;
   }
 
   .toggle-modal {
