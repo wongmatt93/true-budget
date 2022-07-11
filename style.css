@@ -24,7 +24,6 @@ main {
 }
 
 .overview {
-  border: 2px solid black;
   margin: 10px;
   background-color: aqua;
   text-align: center;
@@ -118,7 +117,7 @@ main {
 .categories-list {
   background-color: lightgreen;
   padding: 15%;
-  border-radius: 20%;
+  border-radius: 10px;
 }
 
 .transaction-list {
@@ -198,6 +197,7 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
 footer button {
   width: 100%;
   background-color: forestgreen;
@@ -268,11 +268,41 @@ footer button {
     height: 40%;
     flex: 1;
   }
-  .transaction-section {
-    position: absolute;
-    top: 45%;
+
+  .categories,
+  .update-budget {
+    display: none;
+  }
+
+  .categories-modal {
+    position: static;
+    background-color: transparent;
+    width: 100%;
+    z-index: 0;
+  }
+
+  .categories-list {
+    padding: 0;
+    height: 100%;
     width: 100%;
   }
+
+  .close-categories {
+    display: none;
+  }
+
+  .form-modal {
+    position: static;
+    background-color: transparent;
+    z-index: 0;
+  }
+
+  .transaction-section {
+    position: absolute;
+    top: 42%;
+    width: 100%;
+  }
+
   .toggle-modal {
     display: flex;
   }
