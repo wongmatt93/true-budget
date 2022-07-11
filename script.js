@@ -54,18 +54,19 @@ expenseButton.addEventListener("click", footerButton);
 const updateExpenseList = () => {
   transactionList.textContent = "";
   expenseArray.forEach((expenses, index) => {
-    const newList = document.createElement("li");
-    const newAmount = document.createElement("p");
-    const newType = document.createElement("p");
-    const newName = document.createElement("p");
+    const newList = document.createElement("tr");
+    const newAmount = document.createElement("td");
+    const newType = document.createElement("td");
+    const newName = document.createElement("td");
+    const newTrash = document.createElement("td");
     const trash = document.createElement("i");
     trash.classList.add("fa-solid", "fa-trash");
     trash.setAttribute("data-index", index);
-    newList.classList.add("expense-item");
     newAmount.textContent = `$${expenses.expenseValues}`;
     newType.textContent = expenses.expenseType;
     newName.textContent = expenses.expenseName;
-    newList.append(newType, newName, newAmount, trash);
+    newTrash.append(trash);
+    newList.append(newType, newName, newAmount, newTrash);
     transactionList.append(newList);
   });
 };
