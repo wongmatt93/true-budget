@@ -36,9 +36,13 @@ updateBudget.addEventListener("click", () => {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   budget = document.querySelector("#budget").value;
-  currentBudget.textContent = `$${budget}`;
+  currentBudget.textContent = `$${budget
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
   balance = parseInt(budget) - parseInt(spent);
-  remainingBudget.textContent = `$${balance}`;
+  remainingBudget.textContent = `$${balance
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
   formModal.classList.add("toggle-modal");
 });
 
@@ -62,7 +66,9 @@ const updateExpenseList = () => {
     const trash = document.createElement("i");
     trash.classList.add("fa-solid", "fa-trash");
     trash.setAttribute("data-index", index);
-    newAmount.textContent = `$${expenses.expenseValues}`;
+    newAmount.textContent = `$${expenses.expenseValues
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
     newType.textContent = expenses.expenseType;
     newName.textContent = expenses.expenseName;
     newTrash.append(trash);
@@ -90,11 +96,21 @@ const subTotal = (array) => {
       miscellaneousBudget += parseInt(item.expenseValues);
     }
   }
-  entertainmentTotal.textContent = `Entertainment Total = $${entertainmentBudget}`;
-  bilsTotal.textContent = `Bills Total = $${billsBudget}`;
-  clothingTotal.textContent = `Clothing Total = $${clothingBudget}`;
-  foodTotal.textContent = `Food Total = $${foodBudget}`;
-  miscellaneousTotal.textContent = `Miscellaneous Total = $${miscellaneousBudget}`;
+  entertainmentTotal.textContent = `Entertainment Total = $${entertainmentBudget
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+  bilsTotal.textContent = `Bills Total = $${billsBudget
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+  clothingTotal.textContent = `Clothing Total = $${clothingBudget
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+  foodTotal.textContent = `Food Total = $${foodBudget
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+  miscellaneousTotal.textContent = `Miscellaneous Total = $${miscellaneousBudget
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
 };
 
 const addExpense = (event) => {
@@ -109,10 +125,14 @@ const addExpense = (event) => {
   if (balance < 0) {
     expenseButton.removeEventListener("click", footerButton);
     brokenPiggy.classList.remove("toggle-piggy");
-    remainingBudget.style.color = "#4A1B17";
+    remainingBudget.style.color = "#d40028";
   }
-  remainingBudget.textContent = `$${balance}`;
-  totalSpent.textContent = `$${spent}`;
+  remainingBudget.textContent = `$${balance
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+  totalSpent.textContent = `$${spent
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
   expenseModal.classList.add("toggle-expense");
 
   subTotal(expenseArray);
@@ -138,8 +158,12 @@ transactionList.addEventListener("click", (event) => {
     updateExpenseList();
     subTotal(expenseArray);
 
-    remainingBudget.textContent = `$${balance}`;
-    totalSpent.textContent = `$${spent}`;
+    remainingBudget.textContent = `$${balance
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+    totalSpent.textContent = `$${spent
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
   }
 });
 

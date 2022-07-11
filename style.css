@@ -12,14 +12,19 @@ main {
 }
 
 body {
-  background-color: #214f57;
+  background-image: linear-gradient(to bottom, #214f57 60%, #a35249);
   height: 100vh;
+  font-family: "Montserrat", sans-serif;
   color: white;
 }
 header {
   width: 100%;
   background-color: #18374b;
   color: white;
+}
+
+.fa-piggy-bank {
+  color: #f3ac50;
 }
 
 main {
@@ -51,14 +56,20 @@ header h1 {
 }
 .total-spent {
   flex: 1;
+  background-color: #7d595d;
+  border-right: 5px solid #208e8f;
   box-sizing: border-box;
-  border: 2px solid black;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 5px 0;
 }
 
 .total-budget {
   flex: 1;
-  border: 2px solid black;
-  box-sizing: border-box;
+  background-color: #7d595d;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 5px 0;
 }
 .middle {
   display: flex;
@@ -93,7 +104,7 @@ header h1 {
   border: 1px solid black;
   margin: 10px;
   background-color: #208e8f;
-  height: 250px;
+  height: 550px;
   overflow: auto;
   position: relative;
   border-top-right-radius: 10px;
@@ -222,6 +233,56 @@ header h1 {
   height: 150px;
 }
 
+.budget-form button {
+  border-style: none;
+  padding: 10px 25px;
+  background-color: #18374b;
+  transition: all 0.3s;
+  position: relative;
+  color: white;
+}
+
+.budget-form button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0.1, 1);
+}
+
+.budget-form button:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+.budget-form button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: all 0.3s;
+  background-color: #12232e;
+  opacity: 0.4;
+}
+.budget-form button:hover::after {
+  opacity: 0;
+  transform: scale(0.1, 1);
+}
+
 .transaction-section table {
   width: 100%;
 }
@@ -233,15 +294,43 @@ footer {
 }
 
 footer button {
-  width: 99%;
+  display: block;
+  width: 100%;
   background-color: #12232e;
-  padding: 20px 0;
+  font-size: 18px;
+  text-decoration: none;
   color: white;
+  padding: 20px 0;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all 0.5s;
   border-style: none;
+}
+
+footer button:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ff003b;
+  transition: all 0.35s;
+}
+
+footer button span {
+  position: relative;
+  z-index: 2;
+}
+
+footer button:hover:after {
+  width: 100%;
 }
 
 footer button:hover {
   background-color: #d40028;
+  color: white;
 }
 
 .broken-piggy {
@@ -253,6 +342,7 @@ footer button:hover {
   left: 0;
   right: 0;
 }
+
 .piggy-box {
   position: relative;
   display: flex;
@@ -350,9 +440,14 @@ footer button:hover {
   }
 
   .transaction-section {
-    position: static;
-    top: 42%;
+    position: absolute;
+    top: 43%;
     width: 98%;
+    height: 350px;
+  }
+
+  .transaction-list td {
+    padding: 5px 0;
   }
 
   .toggle-modal {
