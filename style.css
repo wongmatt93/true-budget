@@ -63,7 +63,6 @@ header h1 {
 .middle {
   display: flex;
   margin: 10px;
-
   text-align: center;
   justify-content: space-between;
 }
@@ -76,7 +75,7 @@ header h1 {
 }
 
 .categories:hover {
-  background-color: #0d8141;
+  background-color: #f3ac50;
 }
 
 .update-budget {
@@ -87,7 +86,7 @@ header h1 {
 }
 
 .update-budget:hover {
-  background-color: dodgerblue;
+  background-color: #f3ac50;
 }
 
 .transaction-section {

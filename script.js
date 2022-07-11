@@ -109,6 +109,7 @@ const addExpense = (event) => {
   if (balance < 0) {
     expenseButton.removeEventListener("click", footerButton);
     brokenPiggy.classList.remove("toggle-piggy");
+    remainingBudget.style.color = "#4A1B17";
   }
   remainingBudget.textContent = `$${balance}`;
   totalSpent.textContent = `$${spent}`;
@@ -118,11 +119,12 @@ const addExpense = (event) => {
 
   updateExpenseList();
 };
-// brokenPiggy.addEventListener("click", (event) => {
-//   if (event.target.classList.contains("broken-piggy")) {
-//     brokenPiggy.classList.add("toggle-piggy");
-//   }
-// });
+
+brokenPiggy.addEventListener("click", (event) => {
+  if (event.target.classList.contains("broken-piggy")) {
+    brokenPiggy.classList.add("toggle-piggy");
+  }
+});
 
 expenseForm.addEventListener("submit", addExpense);
 
