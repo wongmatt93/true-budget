@@ -120,16 +120,6 @@ main {
   border-radius: 10px;
 }
 
-.transaction-list {
-  list-style: none;
-}
-
-.expense-item {
-  display: flex;
-  justify-content: space-between;
-  margin: 5px;
-}
-
 .form-modal {
   position: fixed;
   top: 0;
@@ -190,6 +180,10 @@ main {
   justify-content: space-evenly;
   align-items: center;
   height: 150px;
+}
+
+.transaction-section table {
+  width: 100%;
 }
 
 footer {
