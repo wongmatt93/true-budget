@@ -5,14 +5,20 @@ h2,
 h3,
 h4,
 p,
-footer {
+footer,
+main {
   margin: 0;
   padding: 0;
 }
 
+body {
+  background: linear-gradient(to bottom, #12232e, forestgreen);
+  height: 100vh;
+  color: white;
+}
 header {
   width: 100%;
-  background-color: rgb(38, 90, 10);
+  /* background-color: rgb(38, 90, 10); */
   color: white;
   padding: 20px;
 }
@@ -25,7 +31,7 @@ main {
 
 .overview {
   margin: 10px;
-  background-color: aqua;
+  background-color: #0d8141;
   text-align: center;
   border-radius: 10px;
 }
@@ -65,12 +71,12 @@ main {
 }
 
 .categories:hover {
-  background-color: darkkhaki;
+  background-color: #0d8141;
 }
 
 .update-budget {
   width: 40%;
-  background-color: hotpink;
+  background-color: #203647;
   padding: 20px;
   border-radius: 10px;
 }
@@ -82,7 +88,7 @@ main {
 .transaction-section {
   border: 1px solid black;
   margin: 10px;
-  background-color: olivedrab;
+  background-color: rgb(41, 31, 136);
 }
 
 .categories-modal {
@@ -101,22 +107,28 @@ main {
 
 .categories-list ul {
   list-style: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .categories-list h4 {
   text-align: center;
   font-size: 45px;
-  border-bottom: 2px solid darkgreen;
+  margin: 15px;
 }
 
 .categories-list ul li {
   font-size: 25px;
   margin: 10px;
 }
+.fa-angles-left {
+  font-size: 40px;
+  padding-top: 35px;
+}
 
 .categories-list {
-  background-color: lightgreen;
-  padding: 15%;
+  background-color: #18374b;
+  padding: 10% 10% 5% 10%;
   border-radius: 10px;
 }
 
@@ -148,7 +160,7 @@ main {
   z-index: 1;
 }
 .expense-form {
-  background-color: darkmagenta;
+  background-color: #18374b;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -169,7 +181,7 @@ main {
 }
 
 .budget-form {
-  background-color: blueviolet;
+  background-color: #18374b;
   padding: 20px;
   border-radius: 10px;
 }
@@ -198,6 +210,10 @@ footer button {
   padding: 20px;
 }
 
+footer button:hover {
+  background-color: rgb(238, 130, 130);
+}
+
 .broken-piggy {
   position: fixed;
   z-index: 1;
@@ -217,8 +233,8 @@ footer button {
   transform: translate(0, -50%);
 }
 .broken-piggy img {
-  width: 40%;
   position: relative;
+  width: 40%;
 }
 .broken-piggy p {
   font-size: 3vw;
@@ -229,6 +245,7 @@ footer button {
   border: 1px solid black;
   background-color: black;
   width: 40%;
+
   text-align: center;
 }
 .toggle-modal {
@@ -241,10 +258,14 @@ footer button {
   display: none;
 }
 
+.expense-button {
+  font-size: 20px;
+}
+
+.table-caption {
+  font-size: 25px;
+}
 @media only screen and (min-width: 768px) {
-  body {
-    height: 100vh;
-  }
   main {
     display: flex;
     flex-wrap: wrap;
@@ -299,5 +320,22 @@ footer button {
 
   .toggle-modal {
     display: flex;
+  }
+
+  .broken-piggy img {
+    width: 350px;
+  }
+
+  .broken-piggy p {
+    width: 350px;
+    font-size: 20px;
+  }
+
+  .expense-button {
+    font-size: 25px;
+  }
+
+  .table-caption {
+    font-size: 35px;
   }
 }

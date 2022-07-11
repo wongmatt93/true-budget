@@ -118,6 +118,11 @@ const addExpense = (event) => {
 
   updateExpenseList();
 };
+// brokenPiggy.addEventListener("click", (event) => {
+//   if (event.target.classList.contains("broken-piggy")) {
+//     brokenPiggy.classList.add("toggle-piggy");
+//   }
+// });
 
 expenseForm.addEventListener("submit", addExpense);
 
