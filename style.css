@@ -84,20 +84,164 @@ header h1 {
   padding: 20px;
   border-radius: 10px;
 }
-
-.categories:hover {
+/* hover effect */
+/* .hover-effect:hover {
   background-color: #f3ac50;
+} */
+
+.hover-effect {
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
 }
+
+.hover-effect:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #12232e,
+    #18374b,
+    #7d595d,
+    #f3ac50,
+    #208e8f,
+    #214f57
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 10s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.hover-effect:active {
+  color: #000;
+}
+
+.hover-effect:active:after {
+  background: transparent;
+}
+
+.hover-effect:hover:before {
+  opacity: 1;
+}
+
+.hover-effect:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #18374b;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* hover effect */
+
+/* arrow effect */
+#arrowAnim {
+  /* width: px; */
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.arrow {
+  width: 2vw;
+  height: 2vw;
+  border: 1.5vw solid;
+  border-color: #18374b transparent transparent #12232e;
+  transform: rotate(-45deg);
+}
+
+.arrowSliding {
+  position: absolute;
+  -webkit-animation: slide 4s linear infinite;
+  animation: slide 4s linear infinite;
+}
+
+.delay1 {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.delay2 {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+.delay3 {
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(15vw);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(9vw);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-9vw);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-15vw);
+  }
+}
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(15vw);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(9vw);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-9vw);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-15vw);
+  }
+}
+
+/* arrow effect */
 
 .update-budget {
   width: 40%;
   background-color: #18374b;
   padding: 20px;
   border-radius: 10px;
-}
-
-.update-budget:hover {
-  background-color: #f3ac50;
 }
 
 .transaction-section {
@@ -205,8 +349,8 @@ header h1 {
   justify-content: center;
   border-radius: 10%;
   padding: 20px;
-  width: 40%;
-  height: 40%;
+  width: 50%;
+  height: 50%;
 }
 
 .expense-form label {
@@ -233,7 +377,8 @@ header h1 {
   height: 150px;
 }
 
-.budget-form button {
+.budget-form button,
+.expense-form button {
   border-style: none;
   padding: 10px 25px;
   background-color: #18374b;
@@ -242,7 +387,8 @@ header h1 {
   color: white;
 }
 
-.budget-form button::before {
+.budget-form button::before,
+.expense-form button::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -261,12 +407,14 @@ header h1 {
   transform: scale(0.1, 1);
 }
 
-.budget-form button:hover::before {
+.budget-form button:hover::before,
+.expense-form button:hover::before {
   opacity: 1;
   transform: scale(1, 1);
 }
 
-.budget-form button::after {
+.budget-form button::after,
+.expense-form button::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -278,9 +426,14 @@ header h1 {
   background-color: #12232e;
   opacity: 0.4;
 }
-.budget-form button:hover::after {
+.budget-form button:hover::after,
+.expense-form button:hover::after {
   opacity: 0;
   transform: scale(0.1, 1);
+}
+
+.expense-form button {
+  margin: 10pxhov;
 }
 
 .transaction-section table {
@@ -336,7 +489,7 @@ footer button:hover {
 .broken-piggy {
   position: fixed;
   z-index: 1;
-  background-color: rgba(167, 38, 5, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   top: 0;
   bottom: 0;
   left: 0;
@@ -361,9 +514,8 @@ footer button:hover {
   position: absolute;
   top: 0;
   z-index: 2;
-  color: rgb(31, 153, 31);
-  border: 1px solid black;
-  background-color: black;
+  color: white(31, 153, 31);
+  background-color: #12232e;
   width: 40%;
 
   text-align: center;
@@ -405,6 +557,7 @@ footer button:hover {
   .overview {
     height: 40%;
     flex: 1;
+    overflow: auto;
   }
   .middle {
     height: 40%;
@@ -427,6 +580,7 @@ footer button:hover {
     padding: 0;
     height: 100%;
     width: 100%;
+    overflow: auto;
   }
 
   .close-categories {
@@ -437,6 +591,10 @@ footer button:hover {
     position: static;
     background-color: transparent;
     z-index: 0;
+  }
+
+  .expense-form {
+    width: 35%;
   }
 
   .transaction-section {
