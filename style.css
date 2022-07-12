@@ -245,7 +245,6 @@ header h1 {
 }
 
 .transaction-section {
-  border: 1px solid black;
   margin: 10px;
   background-color: #208e8f;
   height: 550px;
@@ -433,7 +432,7 @@ header h1 {
 }
 
 .expense-form button {
-  margin: 10pxhov;
+  margin: 10px;
 }
 
 .transaction-section table {
@@ -544,6 +543,12 @@ footer button:hover {
   border: none;
 }
 
+#myChart {
+  width: 100px;
+  height: 100px;
+  border: none;
+}
+
 @media only screen and (min-width: 768px) {
   main {
     display: flex;
@@ -569,13 +574,6 @@ footer button:hover {
     display: none;
   }
 
-  .categories-modal {
-    position: static;
-    background-color: transparent;
-    width: 100%;
-    z-index: 0;
-  }
-
   .categories-list {
     padding: 0;
     height: 100%;
@@ -583,7 +581,8 @@ footer button:hover {
     overflow: auto;
   }
 
-  .close-categories {
+  .close-categories,
+  #arrowAnim {
     display: none;
   }
 
@@ -610,6 +609,13 @@ footer button:hover {
 
   .toggle-modal {
     display: flex;
+  }
+
+  .categories-modal {
+    position: static;
+    background-color: transparent;
+    width: 100%;
+    z-index: 0;
   }
 
   .broken-piggy img {
