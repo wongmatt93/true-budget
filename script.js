@@ -141,15 +141,10 @@ const subTotal = (array) => {
       datasets: [
         {
           backgroundColor: barColors,
-
+          borderWidth: 0,
           data: yValues,
         },
       ],
-    },
-    options: {
-      title: {
-        display: true,
-      },
     },
   });
 };

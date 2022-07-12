@@ -171,6 +171,11 @@ header h1 {
   padding: 20px;
 }
 
+.go-back-button {
+  font-weight: 100;
+  z-index: 3;
+}
+
 .arrow {
   width: 2vw;
   height: 2vw;
@@ -310,7 +315,7 @@ header h1 {
 
 .categories-list {
   background-color: #208e8f;
-  padding: 10% 10% 5% 10%;
+  padding: 5% 10%;
   border-radius: 10px;
 }
 
