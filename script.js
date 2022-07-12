@@ -117,6 +117,41 @@ const subTotal = (array) => {
   miscellaneousTotal.textContent = `Miscellaneous Total = $${miscellaneousBudget
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+
+  const xValues = [
+    "Entertainment",
+    "Bills",
+    "Clothing",
+    "Food",
+    "Miscellaneous",
+  ];
+  let yValues = [
+    entertainmentBudget,
+    billsBudget,
+    clothingBudget,
+    foodBudget,
+    miscellaneousBudget,
+  ];
+  const barColors = ["#b91d47", "#00aba9", "#2b5797", "#e8c3b9", "#1e7145"];
+
+  new Chart("myChart", {
+    type: "pie",
+    data: {
+      labels: xValues,
+      datasets: [
+        {
+          backgroundColor: barColors,
+
+          data: yValues,
+        },
+      ],
+    },
+    options: {
+      title: {
+        display: true,
+      },
+    },
+  });
 };
 
 const addExpense = (event) => {

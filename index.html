@@ -8,6 +8,7 @@
       src="https://kit.fontawesome.com/77051d86b4.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -73,19 +74,22 @@
               <li class="food-total">Food = $0.00</li>
               <li class="miscellaneous-total">Miscellaneous = $0.00</li>
             </ul>
-            <div id="arrowAnim" class="close-categories">
-              <div class="arrowSliding">
-                <div class="arrow"></div>
-              </div>
-              <div class="arrowSliding delay1">
-                <div class="arrow"></div>
-              </div>
-              <div class="arrowSliding delay2">
-                <div class="arrow"></div>
-              </div>
-              <div class="arrowSliding delay3">
-                <div class="arrow"></div>
-              </div>
+            <div class="pie-chart">
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+          <div id="arrowAnim" class="close-categories">
+            <div class="arrowSliding">
+              <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay1">
+              <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay2">
+              <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay3">
+              <div class="arrow"></div>
             </div>
           </div>
         </section>
