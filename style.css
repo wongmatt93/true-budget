@@ -548,11 +548,16 @@ footer button:hover {
   border: none;
 }
 
-#myChart {
-  width: 100px;
-  height: 100px;
-  border: none;
+.pie-chart {
+  width: 90%;
+  text-align: center;
 }
+
+/* #myChart {
+  width: 40%;
+  height: 30%;
+  border: none;
+} */
 
 @media only screen and (min-width: 768px) {
   main {
