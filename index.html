@@ -57,10 +57,10 @@
         </section>
       </section>
       <section class="middle">
-        <div class="categories">
+        <div class="categories hover-effect">
           <h4>Categories</h4>
         </div>
-        <div class="update-budget">
+        <div class="update-budget hover-effect">
           <h4>Update Budget</h4>
         </div>
         <section class="categories-modal toggle-modal">
@@ -73,7 +73,20 @@
               <li class="food-total">Food = $0.00</li>
               <li class="miscellaneous-total">Miscellaneous = $0.00</li>
             </ul>
-            <i class="fa-solid fa-angles-left close-categories"></i>
+            <div id="arrowAnim" class="close-categories">
+              <div class="arrowSliding">
+                <div class="arrow"></div>
+              </div>
+              <div class="arrowSliding delay1">
+                <div class="arrow"></div>
+              </div>
+              <div class="arrowSliding delay2">
+                <div class="arrow"></div>
+              </div>
+              <div class="arrowSliding delay3">
+                <div class="arrow"></div>
+              </div>
+            </div>
           </div>
         </section>
       </section>
@@ -84,6 +97,7 @@
           </caption>
           <thead>
             <tr class="transaction-row">
+              <th class="date-column">Date</th>
               <th class="categories-column">Categories</th>
               <th class="name-column">Name</th>
               <th class="amount-column">Amount</th>
@@ -97,6 +111,8 @@
         <div class="expense-modal toggle-expense">
           <form class="expense-form">
             <h4>Add Expense</h4>
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date" />
             <label for="categories">Categories</label>
             <select name="categories" id="categories">
               <option value="Entertainment">Entertainment</option>
@@ -123,7 +139,11 @@
       <div class="broken-piggy toggle-piggy">
         <div class="piggy-box">
           <p>You broke your piggybank. You cannot purchase additional items.</p>
-          <img src="assets/pexels-imustbedead-10835793.jpg" alt="" />
+          <img
+            class="piggy-img"
+            src="assets/pexels-imustbedead-10835793.jpg"
+            alt=""
+          />
         </div>
       </div>
     </main>

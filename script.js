@@ -23,7 +23,7 @@ const expenseArray = [];
 
 let balance = 0;
 let spent = 0;
-let budget = 200;
+let budget = 0;
 
 categories.addEventListener("click", () => {
   categoriesModal.classList.remove("toggle-modal");
@@ -44,6 +44,10 @@ form.addEventListener("submit", (event) => {
     .toString()
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
   formModal.classList.add("toggle-modal");
+  if (budget > 0) {
+    expenseButton.addEventListener("click", footerButton);
+    remainingBudget.style.color = "white";
+  }
 });
 
 closeCategories.addEventListener("click", () => {
@@ -59,6 +63,7 @@ const updateExpenseList = () => {
   transactionList.textContent = "";
   expenseArray.forEach((expenses, index) => {
     const newList = document.createElement("tr");
+    const newDate = document.createElement("td");
     const newAmount = document.createElement("td");
     const newType = document.createElement("td");
     const newName = document.createElement("td");
@@ -71,8 +76,9 @@ const updateExpenseList = () => {
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
     newType.textContent = expenses.expenseType;
     newName.textContent = expenses.expenseName;
+    newDate.textContent = expenses.expenseDate;
     newTrash.append(trash);
-    newList.append(newType, newName, newAmount, newTrash);
+    newList.append(newDate, newType, newName, newAmount, newTrash);
     transactionList.append(newList);
   });
 };
@@ -115,10 +121,11 @@ const subTotal = (array) => {
 
 const addExpense = (event) => {
   event.preventDefault();
+  const expenseDate = document.querySelector("#date").value;
   const expenseType = document.querySelector("#categories").value;
   const expenseValues = document.querySelector("#amount").value;
   const expenseName = document.querySelector("#name").value;
-  const newExpense = { expenseType, expenseValues, expenseName };
+  const newExpense = { expenseDate, expenseType, expenseValues, expenseName };
   expenseArray.push(newExpense);
   spent += parseInt(newExpense.expenseValues);
   balance = parseInt(budget) - parseInt(spent);
@@ -140,8 +147,14 @@ const addExpense = (event) => {
   updateExpenseList();
 };
 
+expenseModal.addEventListener("click", (event) => {
+  if (event.target.classList.contains("expense-modal")) {
+    expenseModal.classList.add("toggle-expense");
+  }
+});
+
 brokenPiggy.addEventListener("click", (event) => {
-  if (event.target.classList.contains("broken-piggy")) {
+  if (event.target.classList.contains("piggy-img")) {
     brokenPiggy.classList.add("toggle-piggy");
   }
 });
