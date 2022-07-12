@@ -149,6 +149,8 @@ const subTotal = (array) => {
   });
 };
 
+subTotal(expenseArray);
+
 const addExpense = (event) => {
   event.preventDefault();
   const expenseDate = document.querySelector("#date").value;
@@ -173,6 +175,7 @@ const addExpense = (event) => {
   expenseModal.classList.add("toggle-expense");
 
   subTotal(expenseArray);
+  expenseForm.reset();
 
   updateExpenseList();
 };

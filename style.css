@@ -274,10 +274,6 @@ header h1 {
   width: 15%;
 }
 
-.categories-column {
-  width: 33%;
-}
-
 .categories-modal {
   position: fixed;
   top: 0;
@@ -300,13 +296,13 @@ header h1 {
 
 .categories-list h4 {
   text-align: center;
-  font-size: 45px;
-  margin: 15px;
+  font-size: 25px;
+  margin: 5px;
 }
 
 .categories-list ul li {
-  font-size: 25px;
-  margin: 10px;
+  font-size: 16px;
+  margin: 5px;
 }
 .fa-angles-left {
   font-size: 40px;
@@ -548,10 +544,10 @@ footer button:hover {
   border: none;
 }
 
-.pie-chart {
-  width: 90%;
+/* .pie-chart {
+  width: 100%;
   text-align: center;
-}
+} */
 
 /* #myChart {
   width: 40%;
@@ -588,7 +584,16 @@ footer button:hover {
     padding: 0;
     height: 100%;
     width: 100%;
-    overflow: auto;
+    /* overflow: auto; */
+    overflow-x: scroll;
+    overflow-y: visible;
+  }
+
+  .categories-list ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 
   .close-categories,
@@ -644,4 +649,14 @@ footer button:hover {
   .table-caption {
     font-size: 35px;
   }
+
+  .pie-chart {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* #myChart {
+    height: 100%;
+    max-height: 190px;
+  } */
 }

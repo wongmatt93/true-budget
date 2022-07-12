@@ -75,7 +75,7 @@
               <li class="miscellaneous-total">Miscellaneous = $0.00</li>
             </ul>
             <div class="pie-chart">
-              <canvas id="myChart"></canvas>
+              <canvas id="myChart" style="width:100%;max-width:490px"></canvas>
               <div id="arrowAnim" class="close-categories">
                 <p class="go-back-button">Go Back</p>
                 <div class="arrowSliding">
@@ -117,7 +117,7 @@
           <form class="expense-form">
             <h4>Add Expense</h4>
             <label for="date">Date</label>
-            <input type="date" name="date" id="date" />
+            <input type="date" name="date" id="date" required />
             <label for="categories">Categories</label>
             <select name="categories" id="categories">
               <option value="Entertainment">Entertainment</option>
